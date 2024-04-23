@@ -48,15 +48,14 @@ class PCY:
         #        print(f"Problematic pair: {pair}")
             
 
-
-
     def print_frequent_itemsets(self):
         print("Frequent Itemsets:")
         for itemset in self.frequent_items:
             print(itemset)
         print("Frequent Pairs:")
         for pair in self.frequent_pairs:
-            print(pair)
+            print(pair[0], pair[1])
+
 
 def consume_data(topic, pcy):
     consumer = KafkaConsumer(topic, bootstrap_servers=['localhost:9092'])
